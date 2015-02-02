@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+/*vim ft=JavaScript*/
+
+'use strict';
+
+var traceviewify = require('../');
+
+var bufs = [];
+process.stdin
+  .on('data', function ondata(d) {
+    bufs.push(d);  
+  })
+  .on('error', console.error)
+  .on('end', function onend() {
+    var s = Buffer.concat(bufs).toString();
+
+    try {
+      var cpuprofile = JSON.parse(s);
+      var res = traceviewify(cpuprofile); 
+      var json = JSON.stringify(res, null, 2);
+      process.stdout.write(json);
+    } catch (e) {
+      console.error(e);
+    }
+  })
