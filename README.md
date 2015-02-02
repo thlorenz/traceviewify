@@ -12,6 +12,11 @@ var cpuprofile = require('./fixtures/fibonacci.cpuprofile');
 var traceviewObjectFormat = traceviewify(cpuprofile); 
 ```
 
+![screenshot](assets/screenshot.png)
+
+*Shows* `.cpuprofile` in DevTools on top and *traceviewified* data in [chrome://tracing](chrome://tracing) on the
+bottom.
+
 ## Usage
 
 ```
