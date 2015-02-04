@@ -1,6 +1,6 @@
 {
   "name": "traceviewify",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Converts .cpuprofile format to trace viewer JSON object format to allow analysing the data in chrome://tracing.",
   "main": "index.js",
   "bin": "bin/traceviewify",
