@@ -12,10 +12,13 @@ var cpuprofile = require('./fixtures/fibonacci.cpuprofile');
 var traceviewObjectFormat = traceviewify(cpuprofile); 
 ```
 
-![screenshot](assets/screenshot.png)
+*[chrome://tracing](chrome://tracing) in showing timeline and sunburst of traceviewified data:*
 
-*Shows* `.cpuprofile` in DevTools on top and *traceviewified* data in [chrome://tracing](chrome://tracing) on the
-bottom.
+![screenshot](assets/traceview.png)
+
+*DevTools showing `.cpuprofile` from which the traceview was generated*
+
+![screenshot](assets/cpuprofile.png)
 
 ## Usage
 
@@ -28,11 +31,6 @@ Then load it into [chrome://tracing](chrome://tracing).
 ## Installation
 
     npm install traceviewify
-
-## Disclaimer
-
-Currently only `traceEvents` seem to be converted correctly. Therefore when clicking on the process link on the left an
-error is printed to the console instead of a sunburst appearing. --- working on it ;)
 
 ## DTrace
 

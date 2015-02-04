@@ -7,6 +7,23 @@ function safeString(s, alternative) {
   return (s && s.trim().length && s) || alternative;
 }
 
+function increaseIds(stackFrames) {
+  // workaround:  https://github.com/google/trace-viewer/issues/734
+  //              StackFrames with id=0 cause starburst errors
+  var acc = {}, k, val;
+  var keys = Object.keys(stackFrames);
+
+  for (var i = keys.length -1; i >= 0; i--) {
+    k = parseInt(keys[i]);
+    val = stackFrames[k];
+    // todo: not sure why parent is null instead of not present
+    if (typeof val.parent !== 'undefined') val.parent++;
+    stackFrames[k + 1] = val;
+  }
+  delete stackFrames[0];
+  return stackFrames;
+}
+
 module.exports = 
   
 /**
@@ -37,9 +54,10 @@ function traceviewify(cpuprofile, opts) {
     , opts.cpu || 0 
   ).map()
 
+
   return {
       traceEvents : mapped.events
-    , stackFrames : stackFrames
+    , stackFrames : increaseIds(stackFrames)
     , samples     : mapped.samples
   }
 }
