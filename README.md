@@ -12,9 +12,11 @@ var cpuprofile = require('./fixtures/fibonacci.cpuprofile');
 var traceviewObjectFormat = traceviewify(cpuprofile); 
 ```
 
+[live demo](http://thlorenz.github.io/traceviewify/)
+
 ## Screenshots
 
-![screenshot](assets/traceview.png)
+[![screenshot](assets/traceview.png)](http://thlorenz.github.io/traceviewify/)
 
 *The screenshot above shows [chrome://tracing](chrome://tracing) timeline and sunburst of traceviewified data*
 
