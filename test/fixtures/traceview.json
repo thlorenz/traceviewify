@@ -1227,116 +1227,116 @@
   ],
   "stackFrames": {
     "1": {
-      "category": "iojs - profile-1ms:",
+      "category": "libuv",
       "name": "uv_run"
     },
     "2": {
-      "category": "iojs - profile-1ms:",
+      "category": "libuv",
       "name": "uv__io_poll",
       "parent": 1
     },
     "3": {
-      "category": "iojs - profile-1ms:",
+      "category": "libuv",
       "name": "uv__stream_io",
       "parent": 2
     },
     "4": {
-      "category": "iojs - profile-1ms:",
+      "category": "node",
       "name": "node::StreamWrapCallbacks::DoRead(uv_stream_s*, long, uv_buf_t const*, uv_handle_type)",
       "parent": 3
     },
     "5": {
-      "category": "iojs - profile-1ms:",
+      "category": "node",
       "name": "node::AsyncWrap::MakeCallback(v8::Handle<v8::Function>, int, v8::Handle<v8::Value>*)",
       "parent": 4
     },
     "6": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~onread net.js:487",
       "parent": 5
     },
     "7": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~Readable.push _stream_readable.js:95",
       "parent": 6
     },
     "8": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~readableAddChunk _stream_readable.js:119",
       "parent": 7
     },
     "9": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~emit events.js:56",
       "parent": 8
     },
     "10": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~socketOnData _http_server.js:321",
       "parent": 9
     },
     "11": {
-      "category": "iojs - profile-1ms:",
+      "category": "node",
       "name": "node::Parser::Execute(v8::FunctionCallbackInfo<v8::Value> const&)",
       "parent": 10
     },
     "12": {
-      "category": "iojs - profile-1ms:",
+      "category": "http_parser",
       "name": "http_parser_execute",
       "parent": 11
     },
     "13": {
-      "category": "iojs - profile-1ms:",
+      "category": "node",
       "name": "node::Parser::on_headers_complete_()",
       "parent": 12
     },
     "14": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~parserOnHeadersComplete _http_common.js:43",
       "parent": 13
     },
     "15": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~parserOnIncoming _http_server.js:401",
       "parent": 14
     },
     "16": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~emit events.js:56",
       "parent": 15
     },
     "17": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~onRequest /Volumes/d/dev/js/projects/cpuprofilify/example/fibonacci.js:27",
       "parent": 16
     },
     "18": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~cal_arrayConcat /Volumes/d/dev/js/projects/cpuprofilify/example/fibonacci.js:41",
       "parent": 17
     },
     "19": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "~reduce native array.js:1082",
       "parent": 18
     },
     "20": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "*toFib /Volumes/d/dev/js/projects/cpuprofilify/example/fibonacci.js:43",
       "parent": 19
     },
     "21": {
-      "category": "iojs - profile-1ms:",
+      "category": "JavaScript",
       "name": "*ArrayConcatJS native array.js:366",
       "parent": 20
     },
     "22": {
-      "category": "iojs - profile-1ms:",
+      "category": "v8",
       "name": "v8::internal::Heap::Scavenge()",
       "parent": 21
     },
     "23": {
-      "category": "iojs - profile-1ms:",
+      "category": "system",
       "name": "libsystem_kernel.dylib`read",
       "parent": 2
     }

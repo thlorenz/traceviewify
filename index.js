@@ -1,7 +1,8 @@
 'use strict';
 
-var SampleMapper = require('./lib/sample-mapper')
+var SampleMapper     = require('./lib/sample-mapper')
   , StackFrameMapper = require('./lib/stackframe-mapper')
+  , getCategorizer   = require('./lib/get-categorizer')
 
 function safeString(s, alternative) {
   return (s && s.trim().length && s) || alternative;
@@ -40,15 +41,13 @@ module.exports =
  */
 function traceviewify(cpuprofile, opts) {
   opts = opts || {};
-  var category = safeString(cpuprofile.title, 'CPU');
-
-  var stackFrames = new StackFrameMapper(cpuprofile.head, category).map();
+  var stackFrames = new StackFrameMapper(cpuprofile.head, getCategorizer(cpuprofile)).map();
   var mapped = new SampleMapper(
       stackFrames
     , parseFloat(cpuprofile.startTime) * 1000000.0
     , parseFloat(cpuprofile.endTime) * 1000000.0
     , cpuprofile.samples
-    , category 
+    , cpuprofile.title || 'CPU'
     , opts.pid || 0 
     , opts.tid || 0 
     , opts.cpu || 0 

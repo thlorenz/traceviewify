@@ -13,7 +13,7 @@ var traceviewify = require('..');
 
 test('\nconverting a large cpuprofile with default options', function (t) {
   var cpuprofile = require('./fixtures/fibonacci.cpuprofile')
-    , expected = require('./fixtures/traceview.json')
+     , expected = require('./fixtures/traceview.json')
 
   var res = traceviewify(cpuprofile);
   // fs.writeFileSync(__dirname + '/fixtures/traceview.json', JSON.stringify(res, null, 2), 'utf8');
